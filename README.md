@@ -19,9 +19,13 @@ Package Manager: npm
 📌 Features
 
 ✅ Browse books by category
+
 ✅ Search books by title or author
+
 ✅ View detailed information about each book
+
 ✅ Add new books dynamically
+
 ✅ Smooth transitions and enhanced UI
 
 
