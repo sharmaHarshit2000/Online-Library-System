@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaArrowLeft } from "react-icons/fa"; // Importing an icon
 
@@ -9,7 +9,21 @@ const BookDetails = () => {
   const book = books.find((book) => book.id === id);
 
   if (!book)
-    return <h2 className="text-xl text-red-500 font-semibold text-center mt-6">Book not found</h2>;
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh]">
+        <h2 className="text-3xl font-bold text-gray-800 bg-red-100 px-6 py-3 rounded-lg shadow-md">
+          ❌ Book Not Found
+        </h2>
+        <p className="text-lg text-gray-600 mt-3">The book you’re looking for doesn’t exist.</p>
+        <Link
+          to="/books"
+          className="mt-4 px-6 py-2 bg-blue-600 text-white text-lg font-medium rounded-lg shadow-md
+                     hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Browse Books
+        </Link>
+      </div>
+    );
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-6 pt-20">
@@ -22,7 +36,7 @@ const BookDetails = () => {
         {/* Book Image */}
         <div className="flex justify-center mb-6">
           <img
-            src={book.cover_image}
+            src={book.cover_image || "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} 
             alt={book.title}
             className="w-60 h-80 object-cover rounded-md shadow-md border border-gray-300"
           />
