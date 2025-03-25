@@ -7,19 +7,21 @@ import AddBook from "./pages/AddBook";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
-  <div className="bg-gray-50 min-h-screen flex flex-col">
+  <div className="bg-gray-100 min-h-screen flex flex-col">
     <Router>
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/books" element={<BrowseBooks />} />
-          <Route path="/book/:id" element={<BookDetails />} />
-          <Route path="/books/:category?" element={<BrowseBooks />} />
-          <Route path="/add-book" element={<AddBook />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+      <div className="flex-grow bg-gray-100 px-4 sm:px-6 lg:px-8">
+        <main className="max-w-6xl mx-auto w-full py-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/books" element={<BrowseBooks />} />
+            <Route path="/book/:id" element={<BookDetails />} />
+            <Route path="/books/:category?" element={<BrowseBooks />} />
+            <Route path="/add-book" element={<AddBook />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   </div>
 );

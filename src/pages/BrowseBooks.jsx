@@ -20,12 +20,11 @@ const BrowseBooks = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 p-6 pt-20"> 
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <h1 className="text-4xl font-extrabold text-gray-800 mb-8 text-center">📚 Browse Books</h1>
-
-        {/* Category Navigation */}
+         {/* Category Navigation */}
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           {categories.map((cat) => (
             <button

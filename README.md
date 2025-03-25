@@ -18,20 +18,28 @@ Package Manager: npm
 
 📌 Features
 
-✅ Browse books by category✅ Search books by title or author✅ View detailed information about each book✅ Add new books dynamically✅ Smooth transitions and enhanced UI
+✅ Browse books by category
+✅ Search books by title or author
+✅ View detailed information about each book
+✅ Add new books dynamically
+✅ Smooth transitions and enhanced UI
+
 
 
 🏗️ Installation & Setup
 
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/online-library.git
-cd online-library
+
+git clone https://github.com/sharmaHarshit2000/Online-Library-System.git
+
+cd Online-Library-System
 
 2️⃣ Install Dependencies
-npm install  
+
+npm install
 
 3️⃣ Start the Development Server
-npm run dev  
 
+npm run dev
 
 

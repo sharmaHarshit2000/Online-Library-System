@@ -14,50 +14,65 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!book.title || !book.author || !book.category) return alert("All fields are required!");
     dispatch(addBook({ id: Date.now().toString(), ...book, rating: 4.5 }));
     navigate("/books");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      {/* Form Container */}
-      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Add New Book</h1>
+    <div className="w-full min-h-screen flex justify-center items-center bg-gray-100 px-4">
+      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-lg border border-gray-200 mt-24 mb-16">
+        <h1 className="text-3xl font-bold text-gray-800 text-center mb-6 flex justify-center items-center gap-2">
+          📚 Add a New Book
+        </h1>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <input
             name="title"
-            placeholder="Title"
+            placeholder="📌 Book Title"
+            value={book.title}
             onChange={handleChange}
-            className="border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            required
+            className="bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:ring-4 focus:ring-blue-300 
+                      focus:border-blue-500 transition-all duration-300 w-full text-gray-800 placeholder-gray-500"
           />
+
           <input
             name="author"
-            placeholder="Author"
+            placeholder="✍️ Author Name"
+            value={book.author}
             onChange={handleChange}
-            className="border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            required
+            className="bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:ring-4 focus:ring-blue-300 
+                      focus:border-blue-500 transition-all duration-300 w-full text-gray-800 placeholder-gray-500"
           />
+
           <input
             name="category"
-            placeholder="Category"
+            placeholder="📂 Category"
+            value={book.category}
             onChange={handleChange}
-            className="border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            required
+            className="bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:ring-4 focus:ring-blue-300 
+                      focus:border-blue-500 transition-all duration-300 w-full text-gray-800 placeholder-gray-500"
           />
+
           <input
             name="cover_image"
-            placeholder="Cover Image URL"
+            placeholder="🖼️ Cover Image URL (optional)"
+            value={book.cover_image}
             onChange={handleChange}
-            className="border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:ring-4 focus:ring-blue-300 
+                      focus:border-blue-500 transition-all duration-300 w-full text-gray-800 placeholder-gray-500"
           />
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition duration-300"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 
+                       shadow-md hover:shadow-lg border border-blue-600"
           >
-            Add Book
+            ➕ Add Book
           </button>
         </form>
       </div>
